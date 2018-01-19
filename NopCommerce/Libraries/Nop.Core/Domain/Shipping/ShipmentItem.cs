@@ -1,4 +1,6 @@
 
+using System.Runtime.Serialization;
+
 namespace Nop.Core.Domain.Shipping
 {
     /// <summary>
@@ -9,21 +11,25 @@ namespace Nop.Core.Domain.Shipping
         /// <summary>
         /// Gets or sets the shipment identifier
         /// </summary>
+        [DataMember]
         public int ShipmentId { get; set; }
 
         /// <summary>
         /// Gets or sets the order item identifier
         /// </summary>
+        [DataMember]
         public int OrderItemId { get; set; }
 
         /// <summary>
         /// Gets or sets the quantity
         /// </summary>
+        [DataMember]
         public int Quantity { get; set; }
 
         /// <summary>
         /// Gets or sets the warehouse identifier
         /// </summary>
+        [DataMember]
         public int WarehouseId { get; set; }
 
         /// <summary>

@@ -25,19 +25,15 @@ namespace Nop.Api.Controllers
 
         private readonly IShippingService _shippingService;
         private readonly IShipmentService _shipmentService;
-        private readonly IDateRangeService _dateRangeService;
-        private readonly IShipmentTracker _shipmentTracker;
 
         #endregion
 
         #region Ctor
 
-        public ShippingsController(IShippingService shippingService, IShipmentService shipmentService, IDateRangeService dateRangeService, IShipmentTracker shipmentTracker)
+        public ShippingsController(IShippingService shippingService, IShipmentService shipmentService)
         {
             this._shippingService = shippingService;
             this._shipmentService = shipmentService;
-            this._dateRangeService = dateRangeService;
-            this._shipmentTracker = shipmentTracker;
         }
 
         #endregion
@@ -458,110 +454,110 @@ namespace Nop.Api.Controllers
 
         #endregion
 
-        #region Date
+        //#region Date
 
-        #region Delivery dates
+        //#region Delivery dates
 
-        /// <summary>
-        /// Delete a delivery date
-        /// </summary>
-        /// <param name="deliveryDate">The delivery date</param>
-        public void DeleteDeliveryDate([FromBody]DeliveryDate deliveryDate)
-        {
-            _dateRangeService.DeleteDeliveryDate(deliveryDate);
-        }
+        ///// <summary>
+        ///// Delete a delivery date
+        ///// </summary>
+        ///// <param name="deliveryDate">The delivery date</param>
+        //public void DeleteDeliveryDate([FromBody]DeliveryDate deliveryDate)
+        //{
+        //    _dateRangeService.DeleteDeliveryDate(deliveryDate);
+        //}
 
-        /// <summary>
-        /// Get a delivery date
-        /// </summary>
-        /// <param name="deliveryDateId">The delivery date identifier</param>
-        /// <returns>Delivery date</returns>
-        public DeliveryDate GetDeliveryDateById(int deliveryDateId)
-        {
-            return _dateRangeService.GetDeliveryDateById(deliveryDateId);
-        }
+        ///// <summary>
+        ///// Get a delivery date
+        ///// </summary>
+        ///// <param name="deliveryDateId">The delivery date identifier</param>
+        ///// <returns>Delivery date</returns>
+        //public DeliveryDate GetDeliveryDateById(int deliveryDateId)
+        //{
+        //    return _dateRangeService.GetDeliveryDateById(deliveryDateId);
+        //}
 
-        /// <summary>
-        /// Get all delivery dates
-        /// </summary>
-        /// <returns>Delivery dates</returns>
-        public IList<DeliveryDate> GetAllDeliveryDates()
-        {
-            return _dateRangeService.GetAllDeliveryDates();
-        }
+        ///// <summary>
+        ///// Get all delivery dates
+        ///// </summary>
+        ///// <returns>Delivery dates</returns>
+        //public IList<DeliveryDate> GetAllDeliveryDates()
+        //{
+        //    return _dateRangeService.GetAllDeliveryDates();
+        //}
 
-        /// <summary>
-        /// Insert a delivery date
-        /// </summary>
-        /// <param name="deliveryDate">Delivery date</param>
-        public void InsertDeliveryDate([FromBody]DeliveryDate deliveryDate)
-        {
-            _dateRangeService.InsertDeliveryDate(deliveryDate);
-        }
+        ///// <summary>
+        ///// Insert a delivery date
+        ///// </summary>
+        ///// <param name="deliveryDate">Delivery date</param>
+        //public void InsertDeliveryDate([FromBody]DeliveryDate deliveryDate)
+        //{
+        //    _dateRangeService.InsertDeliveryDate(deliveryDate);
+        //}
 
-        /// <summary>
-        /// Update the delivery date
-        /// </summary>
-        /// <param name="deliveryDate">Delivery date</param>
-        public void UpdateDeliveryDate([FromBody]DeliveryDate deliveryDate)
-        {
-            _dateRangeService.UpdateDeliveryDate(deliveryDate);
-        }
+        ///// <summary>
+        ///// Update the delivery date
+        ///// </summary>
+        ///// <param name="deliveryDate">Delivery date</param>
+        //public void UpdateDeliveryDate([FromBody]DeliveryDate deliveryDate)
+        //{
+        //    _dateRangeService.UpdateDeliveryDate(deliveryDate);
+        //}
 
-        #endregion
+        //#endregion
 
-        #region Product availability ranges
+        //#region Product availability ranges
 
-        /// <summary>
-        /// Get a product availability range
-        /// </summary>
-        /// <param name="productAvailabilityRangeId">The product availability range identifier</param>
-        /// <returns>Product availability range</returns>
-        public ProductAvailabilityRange GetProductAvailabilityRangeById(int productAvailabilityRangeId)
-        {
-            return _dateRangeService.GetProductAvailabilityRangeById(productAvailabilityRangeId);
-        }
+        ///// <summary>
+        ///// Get a product availability range
+        ///// </summary>
+        ///// <param name="productAvailabilityRangeId">The product availability range identifier</param>
+        ///// <returns>Product availability range</returns>
+        //public ProductAvailabilityRange GetProductAvailabilityRangeById(int productAvailabilityRangeId)
+        //{
+        //    return _dateRangeService.GetProductAvailabilityRangeById(productAvailabilityRangeId);
+        //}
 
-        /// <summary>
-        /// Get all product availability ranges
-        /// </summary>
-        /// <returns>Product availability ranges</returns>
-        public IList<ProductAvailabilityRange> GetAllProductAvailabilityRanges()
-        {
-            return _dateRangeService.GetAllProductAvailabilityRanges();
-        }
+        ///// <summary>
+        ///// Get all product availability ranges
+        ///// </summary>
+        ///// <returns>Product availability ranges</returns>
+        //public IList<ProductAvailabilityRange> GetAllProductAvailabilityRanges()
+        //{
+        //    return _dateRangeService.GetAllProductAvailabilityRanges();
+        //}
 
-        /// <summary>
-        /// Insert the product availability range
-        /// </summary>
-        /// <param name="productAvailabilityRange">Product availability range</param>
-        public void InsertProductAvailabilityRange([FromBody]ProductAvailabilityRange productAvailabilityRange)
-        {
-            _dateRangeService.InsertProductAvailabilityRange(productAvailabilityRange);
-        }
+        ///// <summary>
+        ///// Insert the product availability range
+        ///// </summary>
+        ///// <param name="productAvailabilityRange">Product availability range</param>
+        //public void InsertProductAvailabilityRange([FromBody]ProductAvailabilityRange productAvailabilityRange)
+        //{
+        //    _dateRangeService.InsertProductAvailabilityRange(productAvailabilityRange);
+        //}
 
-        /// <summary>
-        /// Update the product availability range
-        /// </summary>
-        /// <param name="productAvailabilityRange">Product availability range</param>
-        public void UpdateProductAvailabilityRange([FromBody]ProductAvailabilityRange productAvailabilityRange)
-        {
-            _dateRangeService.UpdateProductAvailabilityRange(productAvailabilityRange);
-        }
+        ///// <summary>
+        ///// Update the product availability range
+        ///// </summary>
+        ///// <param name="productAvailabilityRange">Product availability range</param>
+        //public void UpdateProductAvailabilityRange([FromBody]ProductAvailabilityRange productAvailabilityRange)
+        //{
+        //    _dateRangeService.UpdateProductAvailabilityRange(productAvailabilityRange);
+        //}
 
-        /// <summary>
-        /// Delete the product availability range
-        /// </summary>
-        /// <param name="productAvailabilityRange">Product availability range</param>
-        public void DeleteProductAvailabilityRange([FromBody]ProductAvailabilityRange productAvailabilityRange)
-        {
-            _dateRangeService.DeleteProductAvailabilityRange(productAvailabilityRange);
-        }
+        ///// <summary>
+        ///// Delete the product availability range
+        ///// </summary>
+        ///// <param name="productAvailabilityRange">Product availability range</param>
+        //public void DeleteProductAvailabilityRange([FromBody]ProductAvailabilityRange productAvailabilityRange)
+        //{
+        //    _dateRangeService.DeleteProductAvailabilityRange(productAvailabilityRange);
+        //}
 
-        #endregion
+        //#endregion
 
 
-        #endregion
+        //#endregion
 
         #endregion
     }
