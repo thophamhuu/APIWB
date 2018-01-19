@@ -1125,8 +1125,8 @@ namespace Nop.Services.Orders
                     shoppingCartItem.AttributesXml = attributesXml;
                     shoppingCartItem.Quantity = newQuantity;
                     shoppingCartItem.UpdatedOnUtc = DateTime.UtcNow;
-                    _customerService.UpdateCustomer(customer);
 
+                    UpdateShoppingCartItem(shoppingCartItem);
                     //event notification
                     _eventPublisher.EntityUpdated(shoppingCartItem);
                 }
@@ -1181,14 +1181,6 @@ namespace Nop.Services.Orders
                         CustomerId = customer.Id
                     };
                     InsertShoppingCartItem(shoppingCartItem);
-                    customer.ShoppingCartItems.Add(shoppingCartItem);
-
-                    //updated "HasShoppingCartItems" property used for performance optimization
-                    customer.HasShoppingCartItems = customer.ShoppingCartItems.Any();
-                    _customerService.UpdateCustomer(customer);
-
-                    //event notification
-                    _eventPublisher.EntityInserted(shoppingCartItem);
                 }
             }
 
@@ -1198,6 +1190,11 @@ namespace Nop.Services.Orders
         {
             var _shoppingCartItemRepository = EngineContext.Current.Resolve<IRepository<ShoppingCartItem>>();
             _shoppingCartItemRepository.Insert(shoppingCartItem);
+        }
+        public virtual void UpdateShoppingCartItem(ShoppingCartItem shoppingCartItem)
+        {
+            var _shoppingCartItemRepository = EngineContext.Current.Resolve<IRepository<ShoppingCartItem>>();
+            _shoppingCartItemRepository.Update(shoppingCartItem);
         }
         /// <summary>
         /// Updates the shopping cart item
@@ -1246,7 +1243,8 @@ namespace Nop.Services.Orders
                         shoppingCartItem.RentalStartDateUtc = rentalStartDate;
                         shoppingCartItem.RentalEndDateUtc = rentalEndDate;
                         shoppingCartItem.UpdatedOnUtc = DateTime.UtcNow;
-                        _customerService.UpdateCustomer(customer);
+                        UpdateShoppingCartItem(shoppingCartItem);
+                        //_customerService.UpdateCustomer(customer);
 
                         //event notification
                         _eventPublisher.EntityUpdated(shoppingCartItem);

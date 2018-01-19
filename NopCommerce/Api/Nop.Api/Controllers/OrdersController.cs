@@ -146,9 +146,10 @@ namespace Nop.Api.Controllers
         /// Inserts an order
         /// </summary>
         /// <param name="order">Order</param>
-        public void InsertOrder(Order order)
+        public HttpResponseMessage InsertOrder(Order order)
         {
             _orderService.InsertOrder(order);
+            return Request.CreateResponse(HttpStatusCode.OK, order);
         }
 
         /// <summary>
@@ -899,7 +900,6 @@ namespace Nop.Api.Controllers
                 var _productService = EngineContext.Current.Resolve<IProductService>();
                 var product = _productService.GetProductById(model.productId);
                 var result = _shoppingCartService.AddToCart(customer, product, model.shoppingCartType, model.storeId, model.attributesXml, model.customerEnteredPrice, model.rentalStartDate, model.rentalEndDate, model.quantity, model.automaticallyAddRequiredProductsIfEnabled);
-                customer = _customerService.GetCustomerById(model.customerId);
                 var response = new AddToCartResponse
                 {
                     warnings = result,
@@ -926,13 +926,26 @@ namespace Nop.Api.Controllers
         /// <param name="quantity">New shopping cart item quantity</param>
         /// <param name="resetCheckoutData">A value indicating whether to reset checkout data</param>
         /// <returns>Warnings</returns>
-        public IList<string> UpdateShoppingCartItem(Customer customer,
-            int shoppingCartItemId, string attributesXml,
-            decimal customerEnteredPrice,
-            DateTime? rentalStartDate = null, DateTime? rentalEndDate = null,
-            int quantity = 1, bool resetCheckoutData = true)
+        public HttpResponseMessage UpdateShoppingCartItem([FromBody]UpdateShoppingCartItemRequest model)
         {
-            return _shoppingCartService.UpdateShoppingCartItem(customer, shoppingCartItemId, attributesXml, customerEnteredPrice, rentalStartDate, rentalEndDate, quantity, resetCheckoutData);
+
+            try
+            {
+                var _customerService = EngineContext.Current.Resolve<ICustomerService>();
+                var customer = _customerService.GetCustomerById(model.customerId);
+                var result = _shoppingCartService.UpdateShoppingCartItem(customer, model.shoppingCartItemId, model.attributesXml, model.customerEnteredPrice, model.rentalStartDate, model.rentalEndDate, model.quantity, model.resetCheckoutData);
+
+                var response = new UpdateShoppingCartItemResponse
+                {
+                    warnings = result,
+                    ShoppingCartItem = customer.ShoppingCartItems.FirstOrDefault(x => x.Id == model.shoppingCartItemId)
+                };
+                return Request.CreateResponse(HttpStatusCode.OK, response);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, ex);
+            }
         }
 
         /// <summary>
