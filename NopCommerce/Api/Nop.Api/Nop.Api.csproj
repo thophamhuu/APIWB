@@ -240,7 +240,6 @@
     <Compile Include="Controllers\CatalogsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
-    <Compile Include="Controllers\ShippingsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -250,16 +249,15 @@
     <Compile Include="Models\Requests\GetFinalPriceRequest.cs" />
     <Compile Include="Models\Requests\GetUnitPriceRequest.cs" />
     <Compile Include="Models\Requests\InsertAclRecordRequest.cs" />
-    <Compile Include="Models\Requests\InsertOrderRequest.cs" />
     <Compile Include="Models\Requests\InsertStoreMappingRequest.cs" />
     <Compile Include="Models\Requests\ConvertFromPrimaryStoreCurrencyRequest.cs" />
     <Compile Include="Models\Requests\SaveSlugRequest.cs" />
     <Compile Include="Models\Requests\SearchProductsRequest.cs" />
     <Compile Include="Models\Requests\UpdateShoppingCartItemRequest.cs" />
     <Compile Include="Models\Requests\ValidateCustomerRequest.cs" />
-    <Compile Include="Models\Responses\UpdateShoppingCartItemResponse.cs" />
     <Compile Include="Models\Responses\AddToCartResponse.cs" />
     <Compile Include="Models\Responses\SearchProductsResponse.cs" />
+    <Compile Include="Models\Responses\UpdateShoppingCartItemResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\Common.cs" />
     <Compile Include="Providers\WorldBuyRefreshTokenProvider.cs" />
@@ -341,7 +339,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>49830</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49647/</IISUrl>
+          <IISUrl>http://localhost:49647</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
