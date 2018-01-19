@@ -240,7 +240,6 @@
     <Compile Include="Controllers\CatalogsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
-    <Compile Include="Controllers\PaymentsController.cs" />
     <Compile Include="Controllers\ShippingsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -251,6 +250,7 @@
     <Compile Include="Models\Requests\GetFinalPriceRequest.cs" />
     <Compile Include="Models\Requests\GetUnitPriceRequest.cs" />
     <Compile Include="Models\Requests\InsertAclRecordRequest.cs" />
+    <Compile Include="Models\Requests\InsertOrderRequest.cs" />
     <Compile Include="Models\Requests\InsertStoreMappingRequest.cs" />
     <Compile Include="Models\Requests\ConvertFromPrimaryStoreCurrencyRequest.cs" />
     <Compile Include="Models\Requests\SaveSlugRequest.cs" />

@@ -2,6 +2,7 @@
 using Nop.Api.Models.Responses;
 using Nop.Core;
 using Nop.Core.Domain.Catalog;
+using Nop.Core.Domain.Common;
 using Nop.Core.Domain.Customers;
 using Nop.Core.Domain.Orders;
 using Nop.Core.Domain.Payments;
@@ -146,8 +147,66 @@ namespace Nop.Api.Controllers
         /// Inserts an order
         /// </summary>
         /// <param name="order">Order</param>
-        public HttpResponseMessage InsertOrder(Order order)
+        public HttpResponseMessage InsertOrder([FromBody]InsertOrderRequest model)
         {
+            var order = new Order
+            {
+                StoreId = model.StoreId,
+                OrderGuid = model.OrderGuid,
+                CustomerId = model.CustomerId,
+                CustomerLanguageId = model.CustomerLanguageId,
+                CustomerTaxDisplayType = model.CustomerTaxDisplayType,
+                CustomerIp = model.CustomerIp,
+                OrderSubtotalInclTax = model.OrderSubtotalInclTax,
+                OrderSubtotalExclTax = model.OrderSubtotalExclTax,
+                OrderSubTotalDiscountInclTax = model.OrderSubTotalDiscountInclTax,
+                OrderSubTotalDiscountExclTax = model.OrderSubTotalDiscountExclTax,
+                OrderShippingInclTax = model.OrderShippingInclTax,
+                OrderShippingExclTax = model.OrderShippingExclTax,
+                PaymentMethodAdditionalFeeInclTax = model.PaymentMethodAdditionalFeeInclTax,
+                PaymentMethodAdditionalFeeExclTax = model.PaymentMethodAdditionalFeeExclTax,
+                TaxRates = model.TaxRates,
+                OrderTax = model.OrderTax,
+                OrderTotal = model.OrderTotal,
+                RefundedAmount = decimal.Zero,
+                OrderDiscount = model.OrderDiscount,
+                CheckoutAttributeDescription = model.CheckoutAttributeDescription,
+                CheckoutAttributesXml = model.CheckoutAttributesXml,
+                CustomerCurrencyCode = model.CustomerCurrencyCode,
+                CurrencyRate = model.CurrencyRate,
+                AffiliateId = model.AffiliateId,
+                OrderStatus = OrderStatus.Pending,
+                AllowStoringCreditCardNumber = model.AllowStoringCreditCardNumber,
+                CardType = model.CardType,
+                CardName = model.CardName,
+                CardNumber = model.CardNumber,
+                MaskedCreditCardNumber = model.MaskedCreditCardNumber,
+                CardCvv2 = model.CardCvv2,
+                CardExpirationMonth = model.CardExpirationMonth,
+                CardExpirationYear = model.CardExpirationYear,
+                PaymentMethodSystemName = model.PaymentMethodSystemName,
+                AuthorizationTransactionId = model.AuthorizationTransactionId,
+                AuthorizationTransactionCode = model.AuthorizationTransactionCode,
+                AuthorizationTransactionResult = model.AuthorizationTransactionResult,
+                CaptureTransactionId = model.CaptureTransactionId,
+                CaptureTransactionResult = model.CaptureTransactionResult,
+                SubscriptionTransactionId = model.SubscriptionTransactionId,
+                PaymentStatus = model.PaymentStatus,
+                PaidDateUtc = null,
+                BillingAddressId = model.BillingAddressId,
+                ShippingAddressId =model.ShippingAddressId,
+                //BillingAddress = details.BillingAddress,
+                //ShippingAddress = details.ShippingAddress,
+                ShippingStatus = model.ShippingStatus,
+                ShippingMethod = model.ShippingMethod,
+                PickUpInStore = model.PickUpInStore,
+                PickupAddress = model.PickupAddressId.HasValue ? new Address { Id = model.PickupAddressId.Value } : null,
+                ShippingRateComputationMethodSystemName = model.ShippingRateComputationMethodSystemName,
+                CustomValuesXml = model.CustomValuesXml,
+                VatNumber = model.VatNumber,
+                CreatedOnUtc = DateTime.UtcNow,
+                CustomOrderNumber = string.Empty
+            };
             _orderService.InsertOrder(order);
             return Request.CreateResponse(HttpStatusCode.OK, order);
         }

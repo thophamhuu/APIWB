@@ -84,6 +84,9 @@ namespace Nop.Data
             {
                 throw new Exception(GetFullErrorText(dbEx), dbEx);
             }
+            catch(Exception ex){
+                throw ex;
+            }
         }
 
         /// <summary>
