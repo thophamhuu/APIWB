@@ -408,16 +408,19 @@ namespace Nop.Core.Domain.Orders
         /// <summary>
         /// Gets or sets the billing address
         /// </summary>
+        [DataMember]
         public virtual Address BillingAddress { get; set; }
 
         /// <summary>
         /// Gets or sets the shipping address
         /// </summary>
+        [DataMember]
         public virtual Address ShippingAddress { get; set; }
 
         /// <summary>
         /// Gets or sets the pickup address
         /// </summary>
+        [DataMember]
         public virtual Address PickupAddress { get; set; }
 
         /// <summary>
