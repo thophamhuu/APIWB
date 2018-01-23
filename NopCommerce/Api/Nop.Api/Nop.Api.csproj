@@ -249,6 +249,7 @@
     <Compile Include="Models\Requests\GetFinalPriceRequest.cs" />
     <Compile Include="Models\Requests\GetUnitPriceRequest.cs" />
     <Compile Include="Models\Requests\InsertAclRecordRequest.cs" />
+    <Compile Include="Models\Requests\InsertOrderRequest.cs" />
     <Compile Include="Models\Requests\InsertStoreMappingRequest.cs" />
     <Compile Include="Models\Requests\ConvertFromPrimaryStoreCurrencyRequest.cs" />
     <Compile Include="Models\Requests\SaveSlugRequest.cs" />
