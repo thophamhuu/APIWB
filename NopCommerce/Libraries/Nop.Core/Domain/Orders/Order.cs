@@ -426,11 +426,13 @@ namespace Nop.Core.Domain.Orders
         /// <summary>
         /// Gets or sets the reward points history record (spent by a customer when placing this order)
         /// </summary>
+        [DataMember]
         public virtual RewardPointsHistory RedeemedRewardPointsEntry { get; set; }
 
         /// <summary>
         /// Gets or sets discount usage history
         /// </summary>
+        [DataMember]
         public virtual ICollection<DiscountUsageHistory> DiscountUsageHistory
         {
             get { return _discountUsageHistory ?? (_discountUsageHistory = new List<DiscountUsageHistory>()); }
@@ -440,6 +442,7 @@ namespace Nop.Core.Domain.Orders
         /// <summary>
         /// Gets or sets gift card usage history (gift card that were used with this order)
         /// </summary>
+        [DataMember]
         public virtual ICollection<GiftCardUsageHistory> GiftCardUsageHistory
         {
             get { return _giftCardUsageHistory ?? (_giftCardUsageHistory = new List<GiftCardUsageHistory>()); }
@@ -449,6 +452,7 @@ namespace Nop.Core.Domain.Orders
         /// <summary>
         /// Gets or sets order notes
         /// </summary>
+        [DataMember]
         public virtual ICollection<OrderNote> OrderNotes
         {
             get { return _orderNotes ?? (_orderNotes = new List<OrderNote>()); }
@@ -458,6 +462,7 @@ namespace Nop.Core.Domain.Orders
         /// <summary>
         /// Gets or sets order items
         /// </summary>
+        [DataMember]
         public virtual ICollection<OrderItem> OrderItems
         {
             get { return _orderItems ?? (_orderItems = new List<OrderItem>()); }
@@ -467,6 +472,7 @@ namespace Nop.Core.Domain.Orders
         /// <summary>
         /// Gets or sets shipments
         /// </summary>
+        [DataMember]
         public virtual ICollection<Shipment> Shipments
         {
             get { return _shipments ?? (_shipments = new List<Shipment>()); }
