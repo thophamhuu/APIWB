@@ -1,0 +1,2 @@
+Affiliate.CategoryMap
+Tax.Worldbuy.FixedOrByCountryStateZip

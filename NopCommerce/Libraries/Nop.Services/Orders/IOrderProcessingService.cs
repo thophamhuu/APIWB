@@ -3,6 +3,7 @@ using Nop.Core.Domain.Customers;
 using Nop.Core.Domain.Orders;
 using Nop.Core.Domain.Shipping;
 using Nop.Services.Payments;
+using static Nop.Services.Orders.OrderProcessingService;
 
 namespace Nop.Services.Orders
 {
@@ -24,6 +25,13 @@ namespace Nop.Services.Orders
         /// <param name="processPaymentRequest">Process payment request</param>
         /// <returns>Place order result</returns>
         PlaceOrderResult PlaceOrder(ProcessPaymentRequest processPaymentRequest);
+
+        /// <summary>
+        /// Places an order
+        /// </summary>
+        /// <param name="processPaymentRequest">Process payment request</param>
+        /// <returns>Place order result</returns>
+        PlaceOrderResult PlaceOrder(ProcessPaymentRequest processPaymentRequest,ProcessPaymentResult processPaymentResult, PlaceOrderContainter details);
 
         /// <summary>
         /// Update order totals

@@ -124,9 +124,14 @@ namespace Nop.Data
 
                 this._context.SaveChanges();
             }
+            
             catch (DbEntityValidationException dbEx)
             {
                 throw new Exception(GetFullErrorText(dbEx), dbEx);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message,ex);
             }
         }
 

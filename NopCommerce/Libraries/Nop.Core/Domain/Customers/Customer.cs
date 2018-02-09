@@ -188,11 +188,13 @@ namespace Nop.Core.Domain.Customers
         /// <summary>
         /// Default billing address
         /// </summary>
+        [DataMember]
         public virtual Address BillingAddress { get; set; }
 
         /// <summary>
         /// Default shipping address
         /// </summary>
+        [DataMember]
         public virtual Address ShippingAddress { get; set; }
 
         /// <summary>

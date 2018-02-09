@@ -134,7 +134,7 @@ namespace Nop.Services.Orders
             if (shoppingCartItem == null)
                 throw new ArgumentNullException("shoppingCartItem");
 
-            var customer = shoppingCartItem.Customer;
+            var customer = _customerService.GetCustomerById(shoppingCartItem.CustomerId);
             var storeId = shoppingCartItem.StoreId;
 
             //reset checkout data
@@ -1308,6 +1308,10 @@ namespace Nop.Services.Orders
             }
         }
 
+        public ShoppingCartItem GetShoppingCartItemById(int id)
+        {
+            return _sciRepository.GetById(id);
+        }
         #endregion
     }
 }

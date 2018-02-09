@@ -1,3 +1,5 @@
+using System.Runtime.Serialization;
+
 namespace Nop.Core.Domain.Catalog
 {
     /// <summary>
@@ -8,23 +10,27 @@ namespace Nop.Core.Domain.Catalog
         /// <summary>
         /// Gets or sets the product identifier
         /// </summary>
+        [DataMember]
         public int ProductId { get; set; }
 
         /// <summary>
         /// Gets or sets the category identifier
         /// </summary>
+        [DataMember]
         public int CategoryId { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the product is featured
         /// </summary>
+        [DataMember]
         public bool IsFeaturedProduct { get; set; }
 
         /// <summary>
         /// Gets or sets the display order
         /// </summary>
+        [DataMember]
         public int DisplayOrder { get; set; }
-        
+
         /// <summary>
         /// Gets the category
         /// </summary>

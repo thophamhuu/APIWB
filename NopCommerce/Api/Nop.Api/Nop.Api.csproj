@@ -180,6 +180,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\InstalledPlugins.txt" />
     <Content Include="App_Data\Settings.txt" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -189,8 +190,30 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Plugins\Affiliate.CategoryMap\Autofac.dll" />
+    <Content Include="Plugins\Affiliate.CategoryMap\Autofac.xml" />
+    <Content Include="Plugins\Affiliate.CategoryMap\Description.txt" />
+    <Content Include="Plugins\Affiliate.CategoryMap\EntityFramework.dll" />
+    <Content Include="Plugins\Affiliate.CategoryMap\EntityFramework.SqlServer.dll" />
+    <Content Include="Plugins\Affiliate.CategoryMap\EntityFramework.SqlServer.xml" />
+    <Content Include="Plugins\Affiliate.CategoryMap\EntityFramework.xml" />
+    <Content Include="Plugins\Affiliate.CategoryMap\logo.png" />
+    <Content Include="Plugins\Affiliate.CategoryMap\Nop.Plugin.Affiliate.CategoryMap.dll" />
+    <Content Include="Plugins\Affiliate.CategoryMap\Nop.Plugin.Affiliate.CategoryMap.pdb" />
+    <Content Include="Plugins\bin\Index.htm" />
+    <Content Include="Plugins\Tax.Worldbuy.FixedOrByCountryStateZip\Autofac.dll" />
+    <Content Include="Plugins\Tax.Worldbuy.FixedOrByCountryStateZip\Autofac.xml" />
+    <Content Include="Plugins\Tax.Worldbuy.FixedOrByCountryStateZip\Description.txt" />
+    <Content Include="Plugins\Tax.Worldbuy.FixedOrByCountryStateZip\logo.jpg" />
+    <Content Include="Plugins\Tax.Worldbuy.FixedOrByCountryStateZip\Nop.Plugin.Tax.Worldbuy.FixedOrByCountryStateZip.dll" />
+    <Content Include="Plugins\Tax.Worldbuy.FixedOrByCountryStateZip\Nop.Plugin.Tax.Worldbuy.FixedOrByCountryStateZip.pdb" />
+    <Content Include="Plugins\Tax.Worldbuy.FixedOrByCountryStateZip\Notes.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Plugins\Affiliate.CategoryMap\web.config" />
+    <Content Include="Plugins\Tax.Worldbuy.FixedOrByCountryStateZip\app.config" />
+    <Content Include="Plugins\Tax.Worldbuy.FixedOrByCountryStateZip\Nop.Plugin.Tax.Worldbuy.FixedOrByCountryStateZip.dll.config" />
+    <Content Include="Plugins\Tax.Worldbuy.FixedOrByCountryStateZip\web.config" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
@@ -239,6 +262,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\CatalogsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OrderProcessingsController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ShippingsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -253,6 +277,7 @@
     <Compile Include="Models\Requests\InsertOrderRequest.cs" />
     <Compile Include="Models\Requests\InsertStoreMappingRequest.cs" />
     <Compile Include="Models\Requests\ConvertFromPrimaryStoreCurrencyRequest.cs" />
+    <Compile Include="Models\Requests\PlaceOrderRequest.cs" />
     <Compile Include="Models\Requests\SaveSlugRequest.cs" />
     <Compile Include="Models\Requests\SearchProductsRequest.cs" />
     <Compile Include="Models\Requests\UpdateShoppingCartItemRequest.cs" />

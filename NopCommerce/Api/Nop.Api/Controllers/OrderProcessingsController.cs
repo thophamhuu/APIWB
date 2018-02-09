@@ -1,4 +1,5 @@
-﻿using Nop.Core.Domain.Customers;
+﻿using Nop.Api.Models.Requests;
+using Nop.Core.Domain.Customers;
 using Nop.Core.Domain.Orders;
 using Nop.Core.Domain.Shipping;
 using Nop.Services.Orders;
@@ -47,9 +48,16 @@ namespace Nop.Api.Controllers
         /// </summary>
         /// <param name="processPaymentRequest">Process payment request</param>
         /// <returns>Place order result</returns>
-        public PlaceOrderResult PlaceOrder(ProcessPaymentRequest processPaymentRequest)
+        public HttpResponseMessage PlaceOrder(PlaceOrderRequest request)
         {
-            return _orderProcessingService.PlaceOrder(processPaymentRequest);
+            try
+            {
+                var result = _orderProcessingService.PlaceOrder(request.processPaymentRequest, request.processPaymentResult, request.details);
+                return Request.CreateResponse(HttpStatusCode.OK, result);
+            }
+            catch (Exception ex) {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
         }
 
         /// <summary>
