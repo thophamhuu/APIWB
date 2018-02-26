@@ -1,6 +1,5 @@
 ﻿using Autofac;
 using Autofac.Core;
-using Nop.API.Framework.Mvc;
 using Nop.Core.Caching;
 using Nop.Core.Configuration;
 using Nop.Core.Data;
@@ -11,6 +10,7 @@ using Nop.Plugin.Affiliate.CategoryMap.Data;
 using Nop.Plugin.Affiliate.CategoryMap.Domain;
 using Nop.Plugin.Affiliate.CategoryMap.Services;
 using Nop.Services.Catalog;
+using Nop.Api.Framework.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Nop.API.Framework.Mvc
+namespace Nop.Api.Framework.Mvc
 {
     /// <summary>
     /// Attribute indicating that entered values should not be trimmed

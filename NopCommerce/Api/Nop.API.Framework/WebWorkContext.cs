@@ -16,9 +16,9 @@ using Nop.Services.Helpers;
 using Nop.Services.Localization;
 using Nop.Services.Stores;
 using Nop.Services.Vendors;
-using Nop.API.Framework.Localization;
+using Nop.Api.Framework.Localization;
 
-namespace Nop.API.Framework
+namespace Nop.Api.Framework
 {
     /// <summary>
     /// Work context for web application

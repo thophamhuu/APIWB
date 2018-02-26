@@ -5,7 +5,7 @@ using System.Web.Routing;
 using Nop.Core.Infrastructure;
 using Nop.Core.Plugins;
 
-namespace Nop.API.Framework.Mvc.Routes
+namespace Nop.Api.Framework.Mvc.Routes
 {
     /// <summary>
     /// Route publisher

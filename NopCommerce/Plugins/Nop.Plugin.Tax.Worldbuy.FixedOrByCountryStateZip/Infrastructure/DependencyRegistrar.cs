@@ -10,8 +10,7 @@ using Nop.Plugin.Tax.Worldbuy.FixedOrByCountryStateZip.Data;
 using Nop.Plugin.Tax.Worldbuy.FixedOrByCountryStateZip.Domain;
 using Nop.Plugin.Tax.Worldbuy.FixedOrByCountryStateZip.Services;
 using Nop.Services.Tax;
-using Nop.API.Framework;
-using Nop.API.Framework.Mvc;
+using Nop.Api.Framework.Mvc;
 
 namespace Nop.Plugin.Tax.Worldbuy.FixedOrByCountryStateZip.Infrastructure
 {

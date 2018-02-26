@@ -2,7 +2,7 @@
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Nop.API.Framework.Localization
+namespace Nop.Api.Framework.Localization
 {
     public static class LocalizedRouteExtensions
     {

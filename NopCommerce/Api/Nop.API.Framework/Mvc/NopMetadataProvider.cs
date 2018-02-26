@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web.Mvc;
 using Nop.Core;
 
-namespace Nop.API.Framework.Mvc
+namespace Nop.Api.Framework.Mvc
 {
     /// <summary>
     /// This MetadataProvider adds some functionality on top of the default DataAnnotationsModelMetadataProvider.

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
 
-namespace Nop.API.Framework.Mvc
+namespace Nop.Api.Framework.Mvc
 {
     /// <summary>
     /// Base nopCommerce model

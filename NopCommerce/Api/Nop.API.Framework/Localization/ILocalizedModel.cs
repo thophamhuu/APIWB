@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Nop.API.Framework.Localization
+namespace Nop.Api.Framework.Localization
 {
     public interface ILocalizedModel
     {

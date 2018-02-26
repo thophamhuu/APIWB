@@ -1244,10 +1244,11 @@ namespace Nop.Services.Orders
                         shoppingCartItem.RentalEndDateUtc = rentalEndDate;
                         shoppingCartItem.UpdatedOnUtc = DateTime.UtcNow;
                         UpdateShoppingCartItem(shoppingCartItem);
-                        //_customerService.UpdateCustomer(customer);
 
-                        //event notification
-                        _eventPublisher.EntityUpdated(shoppingCartItem);
+                        customer.HasShoppingCartItems = customer.ShoppingCartItems.Any();
+                        _customerService.UpdateCustomer(customer);
+
+                      
                     }
                 }
                 else

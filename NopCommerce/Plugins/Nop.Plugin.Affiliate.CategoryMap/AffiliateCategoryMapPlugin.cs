@@ -28,7 +28,7 @@ namespace Nop.Plugin.Affiliate.CategoryMap
             this._context = context;
         }
 
-       
+
         /// <summary>
         /// Install plugin
         /// </summary>
@@ -46,7 +46,6 @@ namespace Nop.Plugin.Affiliate.CategoryMap
             base.Install();
         }
 
-        
 
         /// <summary>
         /// Uninstall plugin

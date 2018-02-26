@@ -190,30 +190,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Plugins\Affiliate.CategoryMap\Autofac.dll" />
-    <Content Include="Plugins\Affiliate.CategoryMap\Autofac.xml" />
-    <Content Include="Plugins\Affiliate.CategoryMap\Description.txt" />
-    <Content Include="Plugins\Affiliate.CategoryMap\EntityFramework.dll" />
-    <Content Include="Plugins\Affiliate.CategoryMap\EntityFramework.SqlServer.dll" />
-    <Content Include="Plugins\Affiliate.CategoryMap\EntityFramework.SqlServer.xml" />
-    <Content Include="Plugins\Affiliate.CategoryMap\EntityFramework.xml" />
-    <Content Include="Plugins\Affiliate.CategoryMap\logo.png" />
-    <Content Include="Plugins\Affiliate.CategoryMap\Nop.Plugin.Affiliate.CategoryMap.dll" />
-    <Content Include="Plugins\Affiliate.CategoryMap\Nop.Plugin.Affiliate.CategoryMap.pdb" />
-    <Content Include="Plugins\bin\Index.htm" />
-    <Content Include="Plugins\Tax.Worldbuy.FixedOrByCountryStateZip\Autofac.dll" />
-    <Content Include="Plugins\Tax.Worldbuy.FixedOrByCountryStateZip\Autofac.xml" />
-    <Content Include="Plugins\Tax.Worldbuy.FixedOrByCountryStateZip\Description.txt" />
-    <Content Include="Plugins\Tax.Worldbuy.FixedOrByCountryStateZip\logo.jpg" />
-    <Content Include="Plugins\Tax.Worldbuy.FixedOrByCountryStateZip\Nop.Plugin.Tax.Worldbuy.FixedOrByCountryStateZip.dll" />
-    <Content Include="Plugins\Tax.Worldbuy.FixedOrByCountryStateZip\Nop.Plugin.Tax.Worldbuy.FixedOrByCountryStateZip.pdb" />
-    <Content Include="Plugins\Tax.Worldbuy.FixedOrByCountryStateZip\Notes.txt" />
+    <Content Include="App_Data\clientApis.xml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Plugins\Affiliate.CategoryMap\web.config" />
-    <Content Include="Plugins\Tax.Worldbuy.FixedOrByCountryStateZip\app.config" />
-    <Content Include="Plugins\Tax.Worldbuy.FixedOrByCountryStateZip\Nop.Plugin.Tax.Worldbuy.FixedOrByCountryStateZip.dll.config" />
-    <Content Include="Plugins\Tax.Worldbuy.FixedOrByCountryStateZip\web.config" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js" />
@@ -224,7 +203,9 @@
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -336,7 +317,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Plugins\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Libraries\Nop.Core\Nop.Core.csproj">
       <Project>{6BDA8332-939F-45B7-A25E-7A797260AE59}</Project>

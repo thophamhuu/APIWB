@@ -2,7 +2,7 @@
 using System.Web;
 using System.Web.Routing;
 
-namespace Nop.API.Framework.Mvc.Routes
+namespace Nop.Api.Framework.Mvc.Routes
 {
     public class GuidConstraint : IRouteConstraint
     {

@@ -1,2 +1,6 @@
 Affiliate.CategoryMap
 Tax.Worldbuy.FixedOrByCountryStateZip
+Payments.CashAtWB
+Payments.CashOnDelivery
+Shipping.RateByDistrict
+Shipping.FixedOrByWeight

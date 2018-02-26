@@ -1,6 +1,6 @@
 ﻿using System.Web.Routing;
 
-namespace Nop.API.Framework.Mvc.Routes
+namespace Nop.Api.Framework.Mvc.Routes
 {
     /// <summary>
     /// Route publisher

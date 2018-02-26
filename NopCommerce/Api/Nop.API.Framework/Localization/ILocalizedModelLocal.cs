@@ -1,4 +1,4 @@
-﻿namespace Nop.API.Framework.Localization
+﻿namespace Nop.Api.Framework.Localization
 {
     public interface ILocalizedModelLocal
     {

@@ -2,7 +2,7 @@
 using System.Web.Mvc;
 using System.Xml;
 
-namespace Nop.API.Framework.Mvc
+namespace Nop.Api.Framework.Mvc
 {
     public class XmlDownloadResult : ActionResult
     {

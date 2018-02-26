@@ -1,4 +1,4 @@
-﻿using Nop.API.Framework;
+﻿using Nop.Api.Framework;
 
 namespace Nop.Plugin.Tax.Worldbuy.FixedOrByCountryStateZip.Models
 {

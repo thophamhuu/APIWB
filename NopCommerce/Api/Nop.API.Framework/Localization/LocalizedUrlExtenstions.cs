@@ -1,7 +1,7 @@
 ﻿using System;
 using Nop.Core.Domain.Localization;
 
-namespace Nop.API.Framework.Localization
+namespace Nop.Api.Framework.Localization
 {
 
     public static class LocalizedUrlExtenstions

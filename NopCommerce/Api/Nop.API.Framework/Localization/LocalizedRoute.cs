@@ -4,7 +4,7 @@ using Nop.Core.Data;
 using Nop.Core.Domain.Localization;
 using Nop.Core.Infrastructure;
 
-namespace Nop.API.Framework.Localization
+namespace Nop.Api.Framework.Localization
 {
     /// <summary>
     /// Provides properties and methods for defining a localized route, and for getting information about the localized route.

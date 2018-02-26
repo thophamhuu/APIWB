@@ -1,4 +1,5 @@
-﻿using Nop.API.Framework.Mvc;
+﻿using Nop.Api.Framework;
+using Nop.Api.Framework.Mvc;
 using System.Collections.Generic;
 using System.Web.Mvc;
 
@@ -14,6 +15,7 @@ namespace Nop.Plugin.Tax.Worldbuy.FixedOrByCountryStateZip.Models
 
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
+
 
         public decimal Percentage { get; set; }
 

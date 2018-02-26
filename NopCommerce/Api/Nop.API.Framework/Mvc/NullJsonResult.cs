@@ -3,7 +3,7 @@ using System.Web.Mvc;
 using Newtonsoft.Json;
 using Nop.Core;
 
-namespace Nop.API.Framework.Mvc
+namespace Nop.Api.Framework.Mvc
 {
     public class NullJsonResult : JsonResult
     {

@@ -4,7 +4,7 @@ using Nop.Core;
 using Nop.Core.Domain.Stores;
 using Nop.Services.Stores;
 
-namespace Nop.API.Framework
+namespace Nop.Api.Framework
 {
     /// <summary>
     /// Store context for web application

@@ -4,7 +4,7 @@ using Nop.Core.Data;
 using Nop.Core.Infrastructure.DependencyManagement;
 using Nop.Data;
 
-namespace Nop.API.Framework.Mvc
+namespace Nop.Api.Framework.Mvc
 {
     /// <summary>
     /// Extensions for DependencyRegistrar

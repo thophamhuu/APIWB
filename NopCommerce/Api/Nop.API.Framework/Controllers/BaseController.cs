@@ -10,7 +10,7 @@ using Nop.Services.Logging;
 using Nop.Services.Stores;
 using System.Web.Http;
 
-namespace Nop.Web.Framework.Controllers
+namespace Nop.Api.Framework.Controllers
 {
     /// <summary>
     /// Base controller

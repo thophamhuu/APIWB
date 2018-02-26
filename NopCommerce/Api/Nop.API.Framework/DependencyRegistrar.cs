@@ -51,7 +51,7 @@ using Nop.Services.Tax;
 using Nop.Services.Topics;
 using Nop.Services.Vendors;
 
-namespace Nop.API.Framework
+namespace Nop.Api.Framework
 {
     /// <summary>
     /// Dependency registrar

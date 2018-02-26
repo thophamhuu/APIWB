@@ -1,7 +1,10 @@
-﻿using System;
+﻿using Nop.Core;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
+using System.Xml.Linq;
 
 namespace Nop.Api.Models
 {
@@ -20,12 +23,24 @@ namespace Nop.Api.Models
         }
         private ClientContext()
         {
-            _clientApis = new List<ClientApi>(){
-                new ClientApi() {Id=1, ClientId= "27ae67c3-cb4d-4d43-b4ed-aee3f13a2f70",ClientSecret= "d9a83b578cdb380bf42fa4431f3284ef",ClientName="Test" ,Roles="Super System"},
-                    new ClientApi() {Id=1, ClientId= "58aeb213-3887-40dd-928c-40a36b2d5ea3",ClientSecret= "c8dfe65e0ed657b49844f775dcd17341",ClientName="World Buy Web" ,Roles="Super System"},
-                    new ClientApi() {Id=2, ClientId= "573df4cd-6fe2-4b9e-84a4-20058f5ae77d",ClientSecret= "b7846f8ab81254644e5d89f472aad50d",ClientName="World Buy App 1" ,Roles="Product" },
-                    new ClientApi() {Id=3, ClientId= "42c34761-69e5-4f97-971b-a2036be3e827",ClientSecret= "8ef6ea91aeb32bda067c5283237c3f0e",ClientName="World Buy App 2" ,Roles="Customer" }
+            var path = Path.Combine(CommonHelper.MapPath("~/App_Data/"), "clientApis.xml");
+            XElement xelement = XElement.Load(path);
+            IEnumerable<XElement> clients = xelement.Elements();
+            // Read the entire XML
+            _clientApis = new List<ClientApi>();
+            foreach (var client in clients)
+            {
+                var clientApi = new ClientApi()
+                {
+                    Id = Int32.Parse(client.Attribute("Id").Value),
+                    ClientName = client.Element("ClientName").Value,
+                    ClientSecret = client.Element("ClientSecret").Value,
+                    ClientId = client.Element("ClientId").Value,
+                    Roles = client.Element("Roles").Value
                 };
+                _clientApis.Add(clientApi);
+            }
+            
         }
         public List<ClientApi> ClientApis { get { return _clientApis; } }
         public static bool ValidateClient(string clientId, string clientSecret)

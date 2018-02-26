@@ -52,7 +52,7 @@ namespace Nop.Api.Controllers
         {
             try
             {
-                var result = _orderProcessingService.PlaceOrder(request.processPaymentRequest, request.processPaymentResult, request.details);
+                var result = _orderProcessingService.PlaceOrder(request.processPaymentRequest,request.processPaymentResult,request.details);
                 return Request.CreateResponse(HttpStatusCode.OK, result);
             }
             catch (Exception ex) {

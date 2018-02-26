@@ -195,7 +195,7 @@ namespace Nop.Api.Controllers
                 PaymentStatus = model.PaymentStatus,
                 PaidDateUtc = null,
                 BillingAddressId = model.BillingAddressId,
-                ShippingAddressId =model.ShippingAddressId,
+                ShippingAddressId = model.ShippingAddressId,
                 //BillingAddress = details.BillingAddress,
                 //ShippingAddress = details.ShippingAddress,
                 ShippingStatus = model.ShippingStatus,
@@ -1439,7 +1439,18 @@ namespace Nop.Api.Controllers
 
         #endregion
 
+        #region Shopping Cart
+        public HttpResponseMessage GetShoppingCartItems(Guid customerGuid)
+        {
+            var _customerService = EngineContext.Current.Resolve<ICustomerService>();
+            if (customerGuid == null || customerGuid == Guid.Empty)
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, new ArgumentNullException("customerGuid"));
+            var customer = _customerService.GetCustomerByGuid(customerGuid);
+            return Request.CreateResponse(HttpStatusCode.OK, customer.ShoppingCartItems);
+        }
+
         #endregion
 
+        #endregion
     }
 }
