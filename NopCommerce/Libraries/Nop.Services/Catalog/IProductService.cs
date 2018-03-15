@@ -560,5 +560,12 @@ namespace Nop.Services.Catalog
             int pageIndex = 0, int pageSize = int.MaxValue);
 
         #endregion
+
+        #region Mobile
+
+        IList<Product> GetAllProductsMobile();
+        IList<Product> GetAllProductsByCategory(int categoryId);
+
+        #endregion
     }
 }

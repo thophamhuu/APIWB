@@ -2137,6 +2137,30 @@ namespace Nop.Services.Catalog
 
         #endregion
 
+        #region Mobile
+
+        public virtual IList<Product> GetAllProductsMobile()
+        {
+            var query = from p in _productRepository.Table
+                        orderby p.DisplayOrder, p.Id
+                        where p.Published && !p.Deleted
+                        select p;
+            var products = query.ToList();
+            return products;
+        }
+
+        public virtual IList<Product> GetAllProductsByCategory(int categoryId)
+        {
+            var query = from p in _productRepository.Table
+                        orderby p.DisplayOrder, p.Id
+                        where p.Published && !p.Deleted && p.ProductCategories.Select(s => s.Id).Contains(categoryId)
+                        select p;
+            var products = query.ToList();
+            return products;
+        }
+
+        #endregion
+
         #endregion
     }
 }
