@@ -372,10 +372,10 @@ namespace Nop.Core
             }
             string serverHost = "";
             if (!isProcess)
-                serverHost = HttpContext.Current.IsDebuggingEnabled ? "localhost:81" : "103.9.159.122";
+                serverHost = HttpContext.Current.IsDebuggingEnabled ? "192.168.1.91:81" : "103.9.159.122";
             else
             {
-                serverHost = (HttpContext.Current.IsDebuggingEnabled ? "localhost" : "103.9.159.122") + ":" + 8080;
+                serverHost = (HttpContext.Current.IsDebuggingEnabled ? "192.168.1.91" : "103.9.159.122") + ":" + 8080;
             }
             return remoteFile.MapPath(serverHost, path);
         }

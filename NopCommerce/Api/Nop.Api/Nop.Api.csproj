@@ -243,6 +243,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\CatalogsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MobileController.cs" />
     <Compile Include="Controllers\OrderProcessingsController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ShippingsController.cs" />
@@ -264,6 +265,7 @@
     <Compile Include="Models\Requests\UpdateShoppingCartItemRequest.cs" />
     <Compile Include="Models\Requests\ValidateCustomerRequest.cs" />
     <Compile Include="Models\Responses\AddToCartResponse.cs" />
+    <Compile Include="Models\Responses\ProductModel.cs" />
     <Compile Include="Models\Responses\SearchProductsResponse.cs" />
     <Compile Include="Models\Responses\UpdateShoppingCartItemResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
