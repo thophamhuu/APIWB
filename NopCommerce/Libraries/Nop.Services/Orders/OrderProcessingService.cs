@@ -241,9 +241,7 @@ namespace Nop.Services.Orders
             public decimal CustomerCurrencyRate { get; set; }
 
             public Address BillingAddress { get; set; }
-            public int BillingAddressId { get; set; }
             public Address ShippingAddress { get; set; }
-            public int ShippingAddressId { get; set; }
             public ShippingStatus ShippingStatus { get; set; }
             public string ShippingMethodName { get; set; }
             public string ShippingRateComputationMethodSystemName { get; set; }
@@ -680,8 +678,8 @@ namespace Nop.Services.Orders
                 SubscriptionTransactionId = processPaymentResult.SubscriptionTransactionId,
                 PaymentStatus = processPaymentResult.NewPaymentStatus,
                 PaidDateUtc = null,
-                BillingAddressId = details.BillingAddressId,
-                ShippingAddressId = details.ShippingAddressId,
+                BillingAddress = details.BillingAddress,
+                ShippingAddress = details.ShippingAddress,
                 ShippingStatus = details.ShippingStatus,
                 ShippingMethod = details.ShippingMethodName,
                 PickUpInStore = details.PickUpInStore,
@@ -1468,9 +1466,7 @@ namespace Nop.Services.Orders
                 var customer = _customerService.GetCustomerById(processPaymentRequest.CustomerId);
                 _logger.Error(logError, customer: customer);
             }
-
             #endregion
-
             return result;
         }
 
