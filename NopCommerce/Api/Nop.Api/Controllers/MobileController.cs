@@ -77,7 +77,8 @@ namespace Nop.Api.Controllers
 
         public IList<CategoryModel> GetAllCategory()
         {
-            var category = 
+            //var category =
+                return new List<CategoryModel>();
         }
 
         #endregion

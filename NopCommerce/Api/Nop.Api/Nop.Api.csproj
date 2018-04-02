@@ -265,6 +265,8 @@
     <Compile Include="Models\Requests\UpdateShoppingCartItemRequest.cs" />
     <Compile Include="Models\Requests\ValidateCustomerRequest.cs" />
     <Compile Include="Models\Responses\AddToCartResponse.cs" />
+    <Compile Include="Models\Responses\CategoryModel.cs" />
+    <Compile Include="Models\Responses\ProductDetailModel.cs" />
     <Compile Include="Models\Responses\ProductModel.cs" />
     <Compile Include="Models\Responses\SearchProductsResponse.cs" />
     <Compile Include="Models\Responses\UpdateShoppingCartItemResponse.cs" />
